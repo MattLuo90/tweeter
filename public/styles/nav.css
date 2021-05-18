@@ -1,0 +1,24 @@
+nav {
+  /* z-index:-1; */
+  font-size: 36px;
+  height: 120px;
+  background-color: #4056A1;
+  color: #FFFFFF;
+  display: flex; 
+  font-family: 'Bungee', cursive;
+  padding:1.5em;
+  justify-content: space-between;
+  align-items:flex-start;
+}
+
+.new-text {
+  font-size: 24px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.arrow {
+  color : red;
+}
