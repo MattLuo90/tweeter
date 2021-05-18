@@ -1,0 +1,15 @@
+header {
+  display: flex;
+  height: 400px;
+  width: 100%;
+  background-color: orange;
+  justify-content: center;
+  align-items: center;
+  flex-direction:column;
+  background-image: url("https://www.transparenttextures.com/patterns/brick-wall.png");
+}
+
+.user-name {
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
