@@ -29,10 +29,13 @@ body {
  }
 
  main {
-   width: 100%;
+   width:90%;
    display: flex;
-   background-color: #f4f1ec;
-   align-items: center;
-   justify-content: center;
+   background-color:#f4f1ec;
+   align-items:flex-start;
    flex-direction: column;
+   position:fixed;
+   margin-left:5%;
  }
+
+ 
