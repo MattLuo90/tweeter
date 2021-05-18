@@ -1,0 +1,24 @@
+.new-tweet {
+  display:flex;
+  flex-direction:column;
+  justify-content: flex-end;
+}
+button {
+  background-color:rgb(21, 18, 226);
+  color: white;
+  border: none;
+  font-family: 'Bungee', cursive;
+}
+
+#tweet-text {
+  background: transparent;
+  border: none;
+  border-bottom: 3px solid #000000;
+  margin: 0px; width: 940px; height: 30px;
+}
+.count {
+  display:flex;
+  flex-direction: row;
+  justify-content:space-between;
+  font-family: 'Bungee', cursive;
+}
