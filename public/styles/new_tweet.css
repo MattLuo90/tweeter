@@ -86,8 +86,8 @@ article.tweet footer {
   color:orange;
 }
 .fa-share:hover {
-  color:orange;
+  color:green;
 }
 .fa-heart:hover {
-  color:orange;
+  color:red;
 }
