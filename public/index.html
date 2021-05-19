@@ -22,11 +22,11 @@
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js" integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
     <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
-    <script src="dist/timeago.js" type="text/javascript"></script>
   </head>
 
   <body>
@@ -49,7 +49,7 @@
     <main class="container">
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
-        <form action ="/tweets" method="post">
+        <form class="send" action ="/tweets" method="post">
           <label for="tweet-text">What are you humming about?</label>
           <textarea name="text" id="tweet-text"></textarea>
           <div class="count">
@@ -58,60 +58,7 @@
           </div>
         </form>
       </section>
-      <article class="tweet">
-        <header>
-          <div>
-            <i class="fas fa-user-astronaut"></i>
-            <span>Matt Luo</span>
-          </div>
-          <div class="tag">@Mr Luo</div>
-        </header>
-        <p>Hello World!!!</p>
-        <footer>
-          <span class="need_to_be_rendered" datetime="2021-05-18T09:24:17Z">May 18, 2021</span>
-          <div class="icon">
-            <i class="fas fa-flag"></i>
-            <i class="fas fa-share"></i>
-            <i class="fas fa-heart"></i>
-          </div>
-        </footer>
-      </article>
-      <article class="tweet">
-        <header>
-          <div>
-            <i class="fas fa-user-astronaut"></i>
-            <span>Matt Luo</span>
-          </div>
-          <div class="tag">@Mr Luo</div>
-        </header>
-        <p>So much work!!!</p>
-        <footer>
-          <span class="need_to_be_rendered" datetime="2021-05-18T09:24:17Z">May 18, 2021</span>
-          <div class="icon">
-            <i class="fas fa-flag"></i>
-            <i class="fas fa-share"></i>
-            <i class="fas fa-heart"></i>
-          </div>
-        </footer>
-      </article>
-      <article class="tweet">
-        <header>
-          <div>
-            <i class="fas fa-user-astronaut"></i>
-            <span>Matt Luo</span>
-          </div>
-          <div class="tag">@Mr Luo</div>
-        </header>
-        <p>Today is a bad day!!!</p>
-        <footer>
-          <span class="need_to_be_rendered" datetime="2021-05-18T09:24:17Z">May 18, 2021</span>
-          <div class="icon">
-            <i class="fas fa-flag"></i>
-            <i class="fas fa-share"></i>
-            <i class="fas fa-heart"></i>
-          </div>
-        </footer>
-      </article>
+      <div id="display"></div>
     </main>
   </body>
 </html>
