@@ -6,7 +6,7 @@ $(document).ready(function() {
     if (remainChar < 0) {
       $(this).parents().find('.counter').text(remainChar).css('color', 'red')
     } else {
-      $(this).parents().find('.counter').text(remainChar).css('color', 'black')
+      $(this).parents().find('.counter').text(remainChar).css('color', '#545149')
     }
   }) 
 })
