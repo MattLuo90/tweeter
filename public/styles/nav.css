@@ -9,6 +9,9 @@ nav {
   padding:1.5em;
   justify-content: space-between;
   align-items:flex-start;
+  position:fixed;
+  top:0;
+  width:100%;
 }
 
 .new-text {
