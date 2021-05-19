@@ -78,6 +78,9 @@ article.tweet footer {
   padding: 0.5em;
   
 }
+#display {
+  width:100%;
+}
 
 .icon {
   color:darkblue;
