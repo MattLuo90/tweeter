@@ -23,5 +23,15 @@ nav {
 
 .arrow {
   color : red;
+  animation: MoveUpDown 1s linear infinite;
+  position: relative;
 }
 
+@keyframes MoveUpDown {
+  0%, 100% {
+    top:10px;
+  }
+  50% {
+    top:0px;
+  }
+}
