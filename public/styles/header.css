@@ -11,6 +11,8 @@
 }
 
 .user-name {
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: 'Source Sans Pro';
+  font-size: 36px;
+  font-weight: normal;
 }
 
