@@ -91,7 +91,7 @@ $(document).ready(function () {
       </header>
       <p class="tweet-content">${escape(tweet.content.text)}</p>
       <footer>
-        <span id=“tweeted-since” class=“tweeted-since-posted”>${time}</span>
+        <div id=“tweeted-since” style="font-size:16px">${time}</div>
         <div class="icon">
           <i class="fas fa-flag"></i>
           <i class="fas fa-share"></i>
