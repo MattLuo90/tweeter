@@ -37,4 +37,27 @@ body {
    margin-left:5%;
  }
 
- 
+ /* style for responsive design */
+@media (min-width: 1024px) {
+  .view {
+    display: flex;
+    flex-direction: row;
+  }
+  .main-header {
+    position:fixed;
+    top:0;
+    width: 40%;
+    margin-top: 200px;
+    margin-left:2em;
+    padding-top:300px;
+    height:350px;
+    padding-bottom:200px;
+    padding-top:200px
+  }
+  .container {
+    margin-top:200px;
+    margin-right:2em;
+    width: 50%;
+    margin-left:50%;
+  }
+}
