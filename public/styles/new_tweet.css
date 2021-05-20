@@ -97,3 +97,9 @@ article.tweet footer {
 .tweet-content {
   word-break: break-all;
 }
+
+.error-msg {
+  color:red;
+  display:flex;
+  justify-content:center;
+}
