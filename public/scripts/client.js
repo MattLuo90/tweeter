@@ -8,7 +8,8 @@ $(document).ready(function () {
     event.preventDefault();
     let formData = $(this).serialize();
     const dataToCheck = formData.slice(5);
-    console.log(dataToCheck.length)
+    // $("<div>").text(formData);
+    console.log(formData)
     if (
       dataToCheck.length > 0 &&
       dataToCheck.length < 141 &&
@@ -56,7 +57,11 @@ $(document).ready(function () {
       $("#display").append($dataToBeAppend);
     }
   };
-
+  const escape = function (str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
 
   const createTweetElement = function (tweet) {
     let time = timeago.format(tweet["created_at"], "en_US");
@@ -71,7 +76,7 @@ $(document).ready(function () {
         </div>
         <div class="tag">${tweet.user.handle}</div>
       </header>
-      <p class="tweet-content">${tweet.content.text}</p>
+      <p class="tweet-content">${escape(tweet.content.text)}</p>
       <footer>
         <span id=“tweeted-since” class=“tweeted-since-posted”>${time}</span>
         <div class="icon">
