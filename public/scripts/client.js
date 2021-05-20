@@ -9,13 +9,20 @@ $(document).ready(function () {
     let formData = $(this).serialize();
     const dataToCheck = formData.slice(5);
     // $("<div>").text(formData);
-    console.log(formData)
-    if (
-      dataToCheck.length > 0 &&
-      dataToCheck.length < 141 &&
-      dataToCheck !== "null" &&
-      dataToCheck !== " "
-    ) {
+    console.log(dataToCheck.length)
+    if (dataToCheck.length === 0 || dataToCheck.length > 140 ){
+       $('.error-msg')
+       .text("your tweet cannot be empty or more than 140 charactors")
+       .slideDown(1000)
+       .delay(2000)
+       .fadeOut(1)
+    } else if (dataToCheck === "null" || $.trim($("textarea").val()) === "") {
+      $('.error-msg')
+      .text("please put someting meaningful")
+      .slideDown(1000)
+      .delay(2000)
+      .fadeOut(1)
+    } else{
       $.ajax({
         url: "/tweets",
         method: "POST",
@@ -30,9 +37,7 @@ $(document).ready(function () {
           console.log("ajax error caught");
           console.log(err);
         });
-    } else {
-      alert("The tweet cannot be empty or more than 140 charactors");
-    }
+    } 
   });
 
   const loadTweets = function (all) {
@@ -90,4 +95,5 @@ $(document).ready(function () {
     return $tweet;
   };
   loadTweets();
+
 });
