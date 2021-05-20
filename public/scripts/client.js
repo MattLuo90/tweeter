@@ -4,6 +4,7 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 $(document).ready(function () {
+  $("section").hide();
   $("form").on("submit", function (event) {
     event.preventDefault();
     let formData = $(this).serialize();
@@ -67,6 +68,13 @@ $(document).ready(function () {
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
   };
+
+  $( ".new-text" ).click(function() {
+    $( "section" ).slideToggle()})
+
+  $(".new-text").click(function() {
+      $('html, body').animate({scrollTop:0}, '300');
+    });
 
   const createTweetElement = function (tweet) {
     let time = timeago.format(tweet["created_at"], "en_US");
