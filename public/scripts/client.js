@@ -3,48 +3,65 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
-
-// Fake data taken from initial-tweets.json
-const data = [
-  {
-    "user": {
-      "name": "Newton",
-      "avatars": "https://i.imgur.com/73hZDYK.png"
-      ,
-      "handle": "@SirIsaac"
-    },
-    "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-    "created_at": 1461116232227
-  },
-  {
-    "user": {
-      "name": "Descartes",
-      "avatars": "https://i.imgur.com/nlhLi3I.png",
-      "handle": "@rd" },
-    "content": {
-      "text": "Je pense , donc je suis"
-    },
-    "created_at": 1461113959088
-  }
-]
-$(document).ready(function(){
-  $('#tweet-text').on("submit", function (event) {
+$(document).ready(function () {
+  $("form").on("submit", function (event) {
     event.preventDefault();
-    console.log(this)
-  })
-  const renderTweets = function(tweets) {
-  // loops through tweets
-  // calls createTweetElement for each tweet
-  // takes return value and appends it to the tweets container
-  for (const key of tweets) {
-      const $dataToBeAppend =createTweetElement(key);
+    let formData = $(this).serialize();
+    const dataToCheck = formData.slice(5);
+    console.log(dataToCheck.length)
+    if (
+      dataToCheck.length > 0 &&
+      dataToCheck.length < 141 &&
+      dataToCheck !== "null" &&
+      dataToCheck !== " "
+    ) {
+      $.ajax({
+        url: "/tweets",
+        method: "POST",
+        data: formData,
+      })
+        .then(() => {
+          $("textarea").val("");
+          $('.counter').text('140');
+          loadTweets();
+        })
+        .catch((err) => {
+          console.log("ajax error caught");
+          console.log(err);
+        });
+    } else {
+      alert("The tweet cannot be empty or more than 140 charactors");
+    }
+  });
+
+  const loadTweets = function (all) {
+    $.ajax({
+      url: "/tweets",
+      method: "GET",
+    })
+      .then((result) => {
+        $('#display').empty();
+        renderTweets(result);  
+      })
+      .catch((err) => {
+        console.log("ajax error caught");
+        console.log(err);
+      });
+  };
+
+  const renderTweets = function (tweets) {
+    tweets.reverse();
+    for (const key of tweets) {
+      const $dataToBeAppend = createTweetElement(key);
       $("#display").append($dataToBeAppend);
     }
   };
-  const createTweetElement = function(tweet) {
-    let time=timeago.format(tweet['created_at'])
+
+
+  const createTweetElement = function (tweet) {
+    let time = timeago.format(tweet["created_at"], "en_US");
+    console.log("time:", tweet["created_at"]);
+    console.log(time);
     const $tweet = $(`
     <article class="tweet">
       <header>
@@ -54,9 +71,9 @@ $(document).ready(function(){
         </div>
         <div class="tag">${tweet.user.handle}</div>
       </header>
-      <p>${tweet.content.text}</p>
+      <p class="tweet-content">${tweet.content.text}</p>
       <footer>
-        <span>${time}</span>
+        <span id=“tweeted-since” class=“tweeted-since-posted”>${time}</span>
         <div class="icon">
           <i class="fas fa-flag"></i>
           <i class="fas fa-share"></i>
@@ -65,8 +82,7 @@ $(document).ready(function(){
       </footer>
     </article>
   `);
-  return $tweet;
-  }
-  renderTweets(data);
-})
-
+    return $tweet;
+  };
+  loadTweets();
+});
