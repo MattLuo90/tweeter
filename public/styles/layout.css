@@ -6,6 +6,7 @@
 html {
   box-sizing: border-box;
 }
+
 *, *:before, *:after {
   box-sizing: inherit;
 }
@@ -13,7 +14,6 @@ html {
 /*
  * Global layout stuff
  */
-
 body {
   color: #545149;
   background-color: #f4f1ec;
@@ -24,40 +24,42 @@ body {
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
- body {
-   font-family:'Source Sans Pro', sans-serif;
- }
+body {
+  font-family: "Source Sans Pro", sans-serif;
+}
 
- main {
-   width:90%;
-   display: flex;
-   background-color:#f4f1ec;
-   align-items:flex-start;
-   flex-direction: column;
-   margin-left:5%;
- }
+main {
+  width: 90%;
+  display: flex;
+  background-color: #f4f1ec;
+  align-items: flex-start;
+  flex-direction: column;
+  margin-left: 5%;
+}
 
- /* style for responsive design */
+/* style for responsive design */
 @media (min-width: 1024px) {
   .view {
     display: flex;
     flex-direction: row;
   }
+
   .main-header {
-    position:fixed;
-    top:0;
+    position: fixed;
+    top: 0;
     width: 40%;
     margin-top: 200px;
-    margin-left:2em;
-    padding-top:300px;
-    height:350px;
-    padding-bottom:200px;
-    padding-top:200px
+    margin-left: 2em;
+    padding-top: 300px;
+    height: 350px;
+    padding-bottom: 200px;
+    padding-top: 200px;
   }
+
   .container {
-    margin-top:200px;
-    margin-right:2em;
+    margin-top: 200px;
+    margin-right: 2em;
     width: 50%;
-    margin-left:50%;
+    margin-left: 50%;
   }
 }

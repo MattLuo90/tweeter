@@ -3,35 +3,35 @@ nav {
   height: 120px;
   background-color: #4056A1;
   color: #FFFFFF;
-  display: flex; 
-  font-family: 'Bungee', cursive;
-  padding:1.5em;
+  display: flex;
+  font-family: "Bungee", cursive;
+  padding: 1.5em;
   justify-content: space-between;
-  align-items:flex-start;
-  position:fixed;
-  top:0;
-  width:100%;
+  align-items: flex-start;
+  position: fixed;
+  top: 0;
+  width: 100%;
 }
 
 .new-text {
   font-size: 24px;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  font-family: 'Source Sans Pro', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Source Sans Pro", sans-serif;
 }
 
 .arrow {
-  color : red;
+  color: red;
   animation: MoveUpDown 1s linear infinite;
   position: relative;
 }
 
 @keyframes MoveUpDown {
   0%, 100% {
-    top:10px;
+    top: 10px;
   }
   50% {
-    top:0px;
+    top: 0px;
   }
 }
