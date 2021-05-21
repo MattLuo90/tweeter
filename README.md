@@ -4,8 +4,8 @@ A simple single-page AJAX-based Twitter clone that uses jQuery, HTML5 and plain 
 
 ## Final Product
 
-!["screenshot description"](#)
-!["screenshot description"](#)
+!["tweeter for smallscreen"](https://github.com/MattLuo90/tweeter/blob/master/docs/tweeter%20for%20smallscreen.jpg?raw=true)
+!["tweeter for widescreen"](https://github.com/MattLuo90/tweeter/blob/master/docs/tweeter%20for%20widescreen.jpg?raw=true)
 
 ## Dependencies
 
@@ -21,7 +21,7 @@ A simple single-page AJAX-based Twitter clone that uses jQuery, HTML5 and plain 
 - Install all dependencies (using the `npm install` command).
 - Run the development web server using the `npm run local` command.
 
-## Stretch work
+## Stretch work completed
 - Sass
 - Form toggle
 
