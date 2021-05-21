@@ -8,16 +8,16 @@ $(document).ready(function() {
   $("form").on("submit", function(event) {
     event.preventDefault();
     let formData = $(this).serialize();
-    const dataToCheck = formData.slice(5);
+    console.log($('.counter')[0].value)
     // conditions to check if user send string are empty or too long 
-    if (dataToCheck.length === 0 || dataToCheck.length > 140 ){
+    if ($('.counter')[0].value < 0 || $('.counter')[0].value === 140 ){
       $('.error-msg')
       .text("your tweet cannot be empty or more than 140 charactors")
       .slideDown(1000)
       .delay(2000)
       .fadeOut(1);
     // conditions to check if user send meaningful string
-    } else if (dataToCheck === "null" || $.trim($("textarea").val()) === "") {
+    } else if ($("textarea").val() === "null" || $.trim($("textarea").val()) === "") {
       $('.error-msg')
       .text("please put someting meaningful")
       .slideDown(1000)
